@@ -1,2 +1,2 @@
 #!/bin/bash
-java -jar my-app-1.0-SNAPSHOT.jar "$@"
+java -jar $( dirname -- "$0"; )/my-app-1.0-SNAPSHOT.jar "$@"
