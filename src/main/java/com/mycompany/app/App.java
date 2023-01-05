@@ -16,10 +16,10 @@ public class App
     public static void main( String[] args ) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
         String input = readInput();
-        bufferedWriter.write("start-"+input+"-end");
         List<String> records = new ArrayList<>(Arrays.asList(input.split("\n")));
 
         for (String row : records) {
+            bufferedWriter.write("start of the row -"+row+"-end of the row");
             // Parse the tab-separated record.
             List<String> cellList = new ArrayList<>(Arrays.asList(row.split("\t")));
             String output = "";
