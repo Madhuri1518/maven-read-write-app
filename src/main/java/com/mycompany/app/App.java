@@ -14,10 +14,11 @@ import java.util.stream.Collectors;
 public class App 
 {
     public static void main( String[] args ) throws IOException {
-        String input = readInput();
-
-        List<String> records = new ArrayList<>(Arrays.asList(input.split("\n")));
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
+        String input = readInput();
+        bufferedWriter.write("start-"+input+"-end");
+        List<String> records = new ArrayList<>(Arrays.asList(input.split("\n")));
+
         for (String row : records) {
             // Parse the tab-separated record.
             List<String> cellList = new ArrayList<>(Arrays.asList(row.split("\t")));
@@ -28,14 +29,13 @@ public class App
 //				String formattedCell = cell.replace("\\\\", "\\");
 //				JSONObject jsonCell= new JSONObject(formattedCell);
                 output += cell + "\t" + "cell-" + cell + "-12";
-//				System.out.println("input: " + input);
             }
             output += "\n";
 //            byte[] outputBytes = output.getBytes(charset);
 //            BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new BufferedOutputStream(System.out));
 //            bufferedOutputStream.write(outputBytes);
 
-            bufferedWriter.write(output);
+//            bufferedWriter.write(output);
         }
         bufferedWriter.flush();
     }
