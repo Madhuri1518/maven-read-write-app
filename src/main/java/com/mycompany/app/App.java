@@ -14,7 +14,7 @@ public class App
     public static void main( String[] args ) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
         String input = readInput();
-        List<String> records = new ArrayList<>(Arrays.asList(input.split("\n")));
+        List<String> records = new ArrayList<>(Arrays.asList(input.substring(1).split("\n")));
         for (String row : records) {
             List<String> cellList = new ArrayList<>(Arrays.asList(row.split(",")));
             String output = "";
