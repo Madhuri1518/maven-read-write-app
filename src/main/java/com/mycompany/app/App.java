@@ -19,7 +19,7 @@ public class App
         List<String> records = new ArrayList<>(Arrays.asList(input.split("\n")));
 
         for (String row : records) {
-            bufferedWriter.write("start of the row -"+row+"-end of the row");
+            bufferedWriter.write("start of the row -"+row+"-end of the row\n");
             // Parse the tab-separated record.
             List<String> cellList = new ArrayList<>(Arrays.asList(row.split("\t")));
             String output = "";
